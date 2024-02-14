@@ -1,0 +1,23 @@
+.warning {
+  border: 1px solid gray;
+  padding: 8px;
+  margin-bottom: 25px;
+}
+
+.warning h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4caf50;
+  padding: 8px 0;
+}
+
+.warning p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+.warning a {
+  text-decoration: none;
+  color: #008cba;
+}
