@@ -2,16 +2,20 @@ import "./update.css";
 import Warning from "../warning/Warning";
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
+import { updateName } from "../../redux/userSlice";
 export default function Update() {
 
   const name = useSelector(state => state.user.name)
+  const dispatch = useDispatch();
+  const [username, setUsername] = useState('')
 
   console.log(name);
 
   function handleFormSubmit(e){
     e.preventDefault()
 
-    alert(name)
+    dispatch(updateName(username))
+    console.log('Disp ', name);
   }
 
   return (
@@ -25,7 +29,9 @@ export default function Update() {
           id="fname"
           name="firstname"
           placeholder="Your name.."
-     
+          onChange={(e)=>{
+            setUsername(e.target.value)
+          }}
         />
 
         <label htmlFor="lname">Last Name</label>

@@ -1,8 +1,8 @@
+import { useSelector } from "react-redux";
 import "./navbar.css";
 
 export default function Navbar() {
-
-
+  const name = useSelector((state)=> state.user.name)
   return (
     <>
       <div className="navbar">
@@ -12,7 +12,7 @@ export default function Navbar() {
             <input type="text" placeholder="Tyoe to search" />
           </form>
         </div>
-        <div>Jakaza</div>
+        <div>{name}</div>
       </div>
     </>
   );
