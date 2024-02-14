@@ -1,9 +1,12 @@
 import "./update.css";
 import Warning from "../warning/Warning";
 import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 export default function Update() {
 
-  const [name, setName] = useState('Name Here')
+  const name = useSelector(state => state.user.name)
+
+  console.log(name);
 
   function handleFormSubmit(e){
     e.preventDefault()
@@ -16,18 +19,16 @@ export default function Update() {
       <Warning message="This is a warning" />
 
       <form onSubmit={handleFormSubmit}>
-        <label for="fname">First Name</label>
+        <label htmlFor="fname">First Name</label>
         <input
           type="text"
           id="fname"
           name="firstname"
           placeholder="Your name.."
-          onChange={(e)=>{
-            setName(e.target.value)
-          }}
+     
         />
 
-        <label for="lname">Last Name</label>
+        <label htmlFor="lname">Last Name</label>
         <input
           type="text"
           id="lname"
